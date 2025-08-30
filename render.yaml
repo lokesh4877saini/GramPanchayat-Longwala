@@ -12,6 +12,3 @@ services:
       - key: PORT
         value: "5000"
       - key: MONGO_URI
-        fromDatabase:
-          name: grampanchayat-db
-          property: connectionString
