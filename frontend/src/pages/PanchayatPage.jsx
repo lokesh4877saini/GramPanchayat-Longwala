@@ -9,13 +9,13 @@ import News from "../components/News";
 import Members from "../components/Members";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
-
+const API_URL = import.meta.env.VITE_SERVER_URL;
 export default function PanchayatPage() {
   const { slug } = useParams();
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/panchayat/${slug}`)
+    axios.get(`${API_URL}/${slug}`)
       .then(res => setData(res.data))
       .catch(err => console.error(err));
   }, [slug]);

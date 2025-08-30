@@ -1,4 +1,4 @@
-import logo1 from '../../public/header.jpg'
+import logo1 from '../assets/header.jpg'
 export default function Header({ name, logo, banner }) {
   return (
     <header className="relative w-full h-72 sm:h-96 flex items-center justify-center text-center">
