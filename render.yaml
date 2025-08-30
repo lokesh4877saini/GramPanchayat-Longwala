@@ -1,0 +1,17 @@
+services:
+  # Backend Service
+  - type: web
+    name: panchayat-backend
+    env: node
+    branch: main
+    rootDir: backend       # Deploy from the backend folder
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: "5000"
+      - key: MONGO_URI
+        fromDatabase:
+          name: grampanchayat-db
+          property: connectionString
